@@ -117,3 +117,8 @@
       messageContainer.scrollHeight - messageContainer.clientHeight;
   }
 })();
+
+// const io = require("socket.io-client"),
+//   ioClient = io.connect("http://localhost:3000");
+
+// ioClient.on("test", (msg) => console.log(msg));
