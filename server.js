@@ -12,6 +12,8 @@ const io = require("socket.io")(server);
 app.use(express.static(path.join(__dirname, "/public")));
 
 io.on("connection", (socket) => {
+  console.log("A user connected with userId: " + socket.id);
+
   socket.on("newuser", (username) => {
     socket.broadcast.emit("update", username + " joined the conversation");
   });
@@ -23,6 +25,12 @@ io.on("connection", (socket) => {
   socket.on("chat", (message) => {
     socket.broadcast.emit("chat", message);
   });
+
+  socket.on("typing", (data) => {
+    socket.broadcast.emit("typing", data);
+  });
+
+  //chat room
 });
 
 server.listen(process.env.APP_PORT, () => {

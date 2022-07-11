@@ -85,7 +85,7 @@ body {
     padding: 0px 20px;
 }
 
-.chat-screen .hearder .logo {
+.chat-screen .header .logo {
     font-size: 18px;
     color: #eee;
     font-weight: 600;
@@ -122,6 +122,10 @@ body {
 
 .chat-screen .messages .message.my-message {
     justify-content: flex-end;
+}
+
+.chat-screen .messages .message.my-message .my-box {
+    background-color: rgb(29, 145, 223);
 }
 
 .chat-screen .messages .message.other-message {
